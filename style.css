@@ -1,5 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+:root {
+  --color-light-gray: #f4f5f7;
+  --color-primary: #ffc700;
+  --color-secondary: #655a7c;
+  --color-orange: #f95738;
+  --color-chocolate: #540b0e;
+  --padding-sm: clamp(1rem, 3%, 1.5rem);
+  --padding-md: clamp(1.5rem, 6%, 3rem);
+  --padding-lg: clamp(3rem, 12%, 6rem);
+  --margin-sm: min(2rem, 4vh);
+  --margin-md: min(4rem, 8vh);
+  --margin-lg: min(8rem, 16vh);
+  --font-main: Poppins, sans-serif;
+}
+
+.color-primary {
+  color: var(--color-primary);
+}
+
+.color-orange {
+  color: var(--color-orange);
+}
+
+.color-secondary {
+  color: var(--color-secondary);
+}
+
+body {
+  background-color: var(--light-gray);
+  font-family: var(--font-main);
+}
+
+button {
+  border: none;
+  background-color: transparent;
+}
+
+/* Navigation */
+
+nav {
+  display: flex;
+  height: 3.5rem;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--padding-sm);
+}
+
+.logo {
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.menu-button {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.menu-button img {
+  height: 100%;
 }
