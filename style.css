@@ -19,6 +19,8 @@
   --margin-md: min(4rem, 8vh);
   --margin-lg: min(8rem, 16vh);
   --font-main: Poppins, sans-serif;
+  --nav-height: min(12.5vh, 4rem);
+  --nav-elements-height: min(2.75rem, 7.5vh);
 }
 
 .color-primary {
@@ -36,6 +38,7 @@
 body {
   background-color: var(--light-gray);
   font-family: var(--font-main);
+  height: 2000vh;
 }
 
 button {
@@ -43,26 +46,72 @@ button {
   background-color: transparent;
 }
 
+h1 {
+}
+
+h2 {
+  font-size: clamp(2.75rem, 1.8578rem + 3.6601vw, 6.25rem);
+}
+
+h4 {
+}
+
+h5 {
+  font-size: clamp(0.9375rem, 0.7304rem + 0.8497vw, 1.75rem);
+}
+
+.btn {
+  color: white;
+  border: white solid clamp(0.125rem, 0.0772rem + 0.1961vw, 0.3125rem);
+  padding: min(2rem, 3vw) min(4rem, 6vw);
+  border-radius: min(3rem, 15vw);
+  font-size: clamp(0.8125rem, 0.7328rem + 0.3268vw, 1.125rem);
+  font-weight: 700;
+}
+
 /* Navigation */
 
 nav {
   display: flex;
-  height: 3.5rem;
+  height: var(--nav-height);
   justify-content: space-between;
   align-items: center;
-  padding: var(--padding-sm);
+  padding: min(1.5rem, 2vh) min(5rem, 6vw);
 }
 
 .logo {
-  text-transform: uppercase;
-  line-height: 1;
+  height: var(--nav-elements-height);
+  fill: var(--color-primary);
 }
 
 .menu-button {
-  width: 1.5rem;
-  height: 1.5rem;
+  width: auto;
+  height: var(--nav-elements-height);
 }
 
 .menu-button img {
   height: 100%;
+}
+
+/* Hero */
+
+.hero {
+  height: calc(100vh - var(--nav-height));
+  padding: var(--padding-lg);
+  background-color: var(--color-chocolate);
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("./img/louis-hansel-wXkGvQJWI-Y-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+
+.hero-text {
+  line-height: 0.9;
+  margin-top: 5vh;
+}
+
+.hero-text h2 {
+  text-transform: uppercase;
+  margin: 1rem 1.5rem;
 }
