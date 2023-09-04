@@ -37,7 +37,7 @@
 }
 
 body {
-  background-color: var(--light-gray);
+  background-color: var(--color-light-gray);
   font-family: var(--font-main);
   height: 2000vh;
 }
@@ -76,12 +76,12 @@ h6 {
   border-radius: min(3rem, 15vw);
   font-size: clamp(0.8125rem, 0.7328rem + 0.3268vw, 1.125rem);
   font-weight: 700;
-  transition: color 0.5s, border 0.5s;
+  transition: border-color 0.5s, color 0.5s;
 }
 
 .btn:hover {
   color: var(--color-primary);
-  border: var(--color-primary) solid;
+  border-color: var(--color-primary);
 }
 
 /* Navigation */
@@ -119,10 +119,10 @@ nav {
   background-size: cover;
   background-position: center;
   color: white;
+  line-height: 0.9;
 }
 
 .hero-text {
-  line-height: 0.9;
   margin-top: 5vh;
 }
 
@@ -147,13 +147,35 @@ nav {
 .meal-cards-container {
   flex: 1;
   list-style-type: none;
+  width: 100vw;
+  /* Solution 1
   display: flex;
-  gap: 7vw;
+  gap: 7vw; */
+
+  /* Solution 2 */
+  display: grid;
+  grid-auto-flow: column;
+  justify-items: center;
+  grid-gap: 1.5rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 1rem 1.5rem 1.5rem;
+  -webkit-overflow-scrolling: touch;
 }
 
 .meal-card {
-  border-radius: 20% 20% 0 0;
+  border-radius: 1.875rem;
   overflow: hidden;
+  width: var(--slider-card-size);
+  background-color: white;
+  padding-bottom: 1rem;
+  -webkit-box-shadow: 0px 0px 15px -7px rgba(66, 68, 90, 1);
+  -moz-box-shadow: 0px 0px 15px -7px rgba(66, 68, 90, 1);
+  box-shadow: 0px 0px 15px -7px rgba(66, 68, 90, 1);
+
+  /* Solution 2 */
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
 }
 
 .meal-card > img {
@@ -168,6 +190,18 @@ nav {
   margin: 0 2vh;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+
+.price-wrapper span {
+  font-weight: 500;
+}
+
+.price-wrapper button {
+  background-color: var(--color-orange);
+  padding: 1rem 0.5rem;
+  border-radius: 2.875rem;
+  color: white;
 }
 
 .see-more {
@@ -178,4 +212,54 @@ nav {
   width: min(10vh, 10vw);
   height: min(5vh, 5vw);
   object-fit: cover;
+}
+
+.panel-text {
+  padding: var(--padding-md);
+  line-height: 0.9;
+  color: white;
+  height: 75vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.text-panel h2 {
+  margin: 1.5rem 0;
+  text-transform: uppercase;
+}
+
+.background-chef {
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("./img/thomas-marban-EHK-EH1SRzQ-unsplash.jpg");
+  background-size: cover;
+  background-position: center 20%;
+}
+
+.background-table {
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("./img/j-torres-CyCMOcYKlu8-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
+  margin: max(3vw, 1.5rem);
+}
+
+.align-right {
+  align-items: flex-end;
+}
+
+.panel-figure {
+  padding: var(--padding-md);
+  line-height: 0.9;
+  color: white;
+  height: 75vh;
+  display: flex;
+}
+
+.background-restaurant {
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("./img/danis-lou-jfZfdQtcH6k-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
 }
